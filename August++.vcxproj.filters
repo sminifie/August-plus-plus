@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ConformanceTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\August++\Array.hpp" />
+    <ClInclude Include="include\August++\Number.hpp" />
+    <ClInclude Include="include\August++\Object.hpp" />
+    <ClInclude Include="include\August++\Document.hpp" />
+    <ClInclude Include="include\August++\String.hpp" />
+    <ClInclude Include="include\August++\Token.hpp" />
+    <ClInclude Include="include\August++\ParseException.hpp" />
+    <ClInclude Include="include\August++\Boolean.hpp" />
+    <ClInclude Include="include\August++\Null.hpp" />
+    <ClInclude Include="include\August++\PowerOf10.hpp" />
+    <ClInclude Include="include\August++\Parse.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="JSON_Checker files">
+      <UniqueIdentifier>{b40fe9b7-f6a9-4521-8850-bbdfa1754cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nativejson-benchmark">
+      <UniqueIdentifier>{91639ff8-6316-4958-8a3c-39dd976d904d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JSON_checker\test-files\pass4.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail2.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail3.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail4.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail5.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail6.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail7.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail8.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail9.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail10.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail11.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail12.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail13.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail14.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail15.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail16.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail17.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail19.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail20.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail21.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail22.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail23.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail24.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail25.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail26.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail27.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail28.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail29.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail30.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail31.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail32.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\fail33.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\pass1.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\pass2.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="JSON_checker\test-files\pass3.json">
+      <Filter>JSON_Checker files</Filter>
+    </None>
+    <None Include="nativejson-benchmark\canada.json">
+      <Filter>nativejson-benchmark</Filter>
+    </None>
+    <None Include="nativejson-benchmark\citm_catalog.json">
+      <Filter>nativejson-benchmark</Filter>
+    </None>
+    <None Include="nativejson-benchmark\twitter.json">
+      <Filter>nativejson-benchmark</Filter>
+    </None>
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>

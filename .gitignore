@@ -1,0 +1,7 @@
+*.user
+.vs
+Debug
+Release
+LLVM Debug
+LLVM Release
+build/
