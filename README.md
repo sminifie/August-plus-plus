@@ -2,12 +2,19 @@
 
 A modern C++ library focusing on fast and efficient parsing of JSON. (Only parsing to begin with). Why "August"? It's the missing month abbreviation in JSON.
 
-This isn't intended to be a demonstration of a neat language implementation with a highly maintainable class structure. It's full of (legal) cheeky tricks to avoid or minimise any copyies, moves or allocations. This turns a dangerous corner to low level (more like C) tactics using type aliasing. Good modern every-day C++ should enjoy a higher level abstraction and still be blisteringly fast; not sacrificing type and runtime safety by cutting corners like I do here to optimise the poop out of it.
+This is a highly optimised library that isn't intended to be a demonstration of a neat language implementation with a highly maintainable class structure. 
+It's full of (legal) cheeky tricks to avoid or minimise any copies, moves or allocations. 
+This turns a dangerous corner to low level (more like C) tactics using type aliasing. 
+Good modern every-day C++ should enjoy a higher level abstraction and still be blisteringly fast; not sacrificing type and runtime safety by cutting corners like I do here to optimise the poop out of it.
 
-Why would anyone want to do this? There are dozens of C++ JSON libraries out there but I couldn't find one that ticked all the right boxes. A lot didn't even compile on modern compilers, used techniques that no longer fit with the standard library, or are no longer maintained. Most support both reading and writing from the same structure and so made trade-offs and comprimises. I could fork any of them but I felt my desires and approach fundamentally differed from others. I would like to separate the read structure from write structure to eke out that extra little performance, and reduce allocations (some implementations submanaged allocations for speed, but not doing it at all will always be faster).
+Why would anyone want to do this? There are dozens of C++ JSON libraries out there but I couldn't find one that ticked all the right boxes. 
+A lot didn't even compile on modern compilers, used techniques that no longer fit with the standard library, or are no longer maintained. 
+Most support both reading and writing from the same structure and so made trade-offs and comprimises. 
+I could fork any of them but I felt my desires and approach fundamentally differed from others. 
+I would like to separate the read structure from write structure to eke out that extra little performance, and reduce allocations (some implementations submanaged allocations for speed, but not doing it at all will always be faster).
 
 My goals:
-* Only a single header inclue required (no .cpp files)
+* Only a single header include required (no .cpp files)
 * Conformance checked, so badly formatted JSON throws instead of undefined behaviour
 * Accurate floating point parsing (some libraries allow inaccuracies to creep in and diverge from the intended value)
 * Compact, low memory overhead so great for embedded platforms
