@@ -65,39 +65,32 @@ namespace August
 		{
 			_index = MakeIndex(TokenType::Null);
 		}
-		explicit constexpr Token(bool boolean) noexcept
+		explicit constexpr Token(bool boolean) noexcept : _index(MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse))
 		{
-			_index = MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse);
 		}
-		explicit constexpr Token(double floatingPoint) noexcept
+		explicit constexpr Token(double floatingPoint) noexcept : _index(MakeIndex(TokenType::FloatingPoint))
 		{
 			_data._floatingPoint = floatingPoint;
-			_index = MakeIndex(TokenType::FloatingPoint);
 		}
-		explicit constexpr Token(std::int64_t integer) noexcept
+		explicit constexpr Token(std::int64_t integer) noexcept : _index(MakeIndex(TokenType::Integer))
 		{
 			_data._integer = integer;
-			_index = MakeIndex(TokenType::Integer);
 		}
-		constexpr Token(const Character* string, std::size_t stringLength) noexcept
+		constexpr Token(const Character* string, std::size_t stringLength) noexcept : _index(MakeIndex(TokenType::String, stringLength))
 		{
 			_data._pointer = static_cast<const void*>(string);
-			_index = MakeIndex(TokenType::String, stringLength);
 		}
-		constexpr Token(const ArraysTable* arrays, std::size_t index) noexcept
+		constexpr Token(const ArraysTable* arrays, std::size_t index) noexcept : _index(MakeIndex(TokenType::Array, index))
 		{
 			_data._pointer = static_cast<const void*>(arrays);
-			_index = MakeIndex(TokenType::Array, index);
 		}
-		constexpr Token(const ObjectsTable* objects, std::size_t index) noexcept
+		constexpr Token(const ObjectsTable* objects, std::size_t index) noexcept : _index(MakeIndex(TokenType::Object, index))
 		{
 			_data._pointer = static_cast<const void*>(objects);
-			_index = MakeIndex(TokenType::Object, index);
 		}
-		explicit constexpr Token(const Token& rhs) noexcept
+		explicit constexpr Token(const Token& rhs) noexcept : _index(rhs._index)
 		{
 			_data = rhs._data;
-			_index = rhs._index;
 		}
 #ifdef _MSC_VER
 #pragma warning(pop)
