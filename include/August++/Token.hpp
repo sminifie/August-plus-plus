@@ -66,43 +66,43 @@ namespace August
 		constexpr // C++20 feature for constexpr and uninitialised members
 #endif
 		Token() noexcept : 
-			_index(MakeIndex(TokenType::Null)),
-			_data(nullptr)
+			_data(nullptr),
+			_index(MakeIndex(TokenType::Null))
 		{
 		}
 		explicit constexpr Token(bool boolean) noexcept :
-			_index(MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse)),
-			_data(nullptr)
+			_data(nullptr),
+			_index(MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse))
 		{
 		}
 		explicit constexpr Token(double floatingPoint) noexcept : 
-			_index(MakeIndex(TokenType::FloatingPoint)),
-			_data(floatingPoint)
+			_data(floatingPoint),
+			_index(MakeIndex(TokenType::FloatingPoint))
 		{
 		}
 		explicit constexpr Token(std::int64_t integer) noexcept :
-			_index(MakeIndex(TokenType::Integer)),
-			_data(integer)
+			_data(integer),
+			_index(MakeIndex(TokenType::Integer))
 		{
 		}
 		constexpr Token(const Character* string, std::size_t stringLength) noexcept :
-			_index(MakeIndex(TokenType::String, stringLength)),
-			_data(static_cast<const void*>(string))
+			_data(static_cast<const void*>(string)),
+			_index(MakeIndex(TokenType::String, stringLength))
 		{
 		}
 		constexpr Token(const ArraysTable* arrays, std::size_t index) noexcept : 
-			_index(MakeIndex(TokenType::Array, index)),
-			_data(static_cast<const void*>(arrays))
+			_data(static_cast<const void*>(arrays)),
+			_index(MakeIndex(TokenType::Array, index))
 		{
 		}
 		constexpr Token(const ObjectsTable* objects, std::size_t index) noexcept : 
-			_index(MakeIndex(TokenType::Object, index)),
-			_data(static_cast<const void*>(objects))
+			_data(static_cast<const void*>(objects)),
+			_index(MakeIndex(TokenType::Object, index))
 		{
 		}
 		explicit constexpr Token(const Token& rhs) noexcept : 
-			_index(rhs._index),
-			_data(rhs._data)
+			_data(rhs._data),
+			_index(rhs._index)
 		{
 		}
 #ifdef _MSC_VER
