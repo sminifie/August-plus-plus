@@ -31,6 +31,10 @@ namespace August
 
 		union FloatingPointIntegerOrPointer
 		{
+			constexpr explicit FloatingPointIntegerOrPointer(double floatingPoint) noexcept : _floatingPoint(floatingPoint) {}
+			constexpr explicit FloatingPointIntegerOrPointer(std::int64_t integer) noexcept : _integer(integer) {}
+			constexpr explicit FloatingPointIntegerOrPointer(const void* pointer) noexcept : _pointer(pointer) {}
+
 			double _floatingPoint;
 			std::int64_t _integer;
 			const void* _pointer;
@@ -61,36 +65,45 @@ namespace August
 #if __cplusplus >= 202002L // C++20
 		constexpr // C++20 feature for constexpr and uninitialised members
 #endif
-		Token() noexcept
-		{
-			_index = MakeIndex(TokenType::Null);
-		}
-		explicit constexpr Token(bool boolean) noexcept : _index(MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse))
+		Token() noexcept : 
+			_index(MakeIndex(TokenType::Null)),
+			_data(nullptr)
 		{
 		}
-		explicit constexpr Token(double floatingPoint) noexcept : _index(MakeIndex(TokenType::FloatingPoint))
+		explicit constexpr Token(bool boolean) noexcept :
+			_index(MakeIndex(boolean ? TokenType::BooleanTrue : TokenType::BooleanFalse)),
+			_data(nullptr)
 		{
-			_data._floatingPoint = floatingPoint;
 		}
-		explicit constexpr Token(std::int64_t integer) noexcept : _index(MakeIndex(TokenType::Integer))
+		explicit constexpr Token(double floatingPoint) noexcept : 
+			_index(MakeIndex(TokenType::FloatingPoint)),
+			_data(floatingPoint)
 		{
-			_data._integer = integer;
 		}
-		constexpr Token(const Character* string, std::size_t stringLength) noexcept : _index(MakeIndex(TokenType::String, stringLength))
+		explicit constexpr Token(std::int64_t integer) noexcept :
+			_index(MakeIndex(TokenType::Integer)),
+			_data(integer)
 		{
-			_data._pointer = static_cast<const void*>(string);
 		}
-		constexpr Token(const ArraysTable* arrays, std::size_t index) noexcept : _index(MakeIndex(TokenType::Array, index))
+		constexpr Token(const Character* string, std::size_t stringLength) noexcept :
+			_index(MakeIndex(TokenType::String, stringLength)),
+			_data(static_cast<const void*>(string))
 		{
-			_data._pointer = static_cast<const void*>(arrays);
 		}
-		constexpr Token(const ObjectsTable* objects, std::size_t index) noexcept : _index(MakeIndex(TokenType::Object, index))
+		constexpr Token(const ArraysTable* arrays, std::size_t index) noexcept : 
+			_index(MakeIndex(TokenType::Array, index)),
+			_data(static_cast<const void*>(arrays))
 		{
-			_data._pointer = static_cast<const void*>(objects);
 		}
-		explicit constexpr Token(const Token& rhs) noexcept : _index(rhs._index)
+		constexpr Token(const ObjectsTable* objects, std::size_t index) noexcept : 
+			_index(MakeIndex(TokenType::Object, index)),
+			_data(static_cast<const void*>(objects))
 		{
-			_data = rhs._data;
+		}
+		explicit constexpr Token(const Token& rhs) noexcept : 
+			_index(rhs._index),
+			_data(rhs._data)
+		{
 		}
 #ifdef _MSC_VER
 #pragma warning(pop)
