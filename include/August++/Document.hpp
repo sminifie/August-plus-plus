@@ -47,7 +47,7 @@ namespace August
 		}
 	};
 
-	Token ParseAny(ObjectsTable& objects, ArraysTable& arrays, Character character, ParseIterator& iterator)
+	inline Token ParseAny(ObjectsTable& objects, ArraysTable& arrays, Character character, ParseIterator& iterator)
 	{
 		switch (character)
 		{
