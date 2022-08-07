@@ -1,5 +1,5 @@
 #pragma once
-#include <stdexcept>
+#include <stdexcept> // std::runtime_error
 #include "Parse.hpp"
 
 namespace August

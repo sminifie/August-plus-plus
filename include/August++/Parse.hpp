@@ -2,23 +2,17 @@
 #include <map>
 #include <vector>
 #include <string_view>
+#include "StringType.hpp"
 
 namespace August
 {
 
 	// Fundamental types and utility functions for the parsing process
 
-#if __cplusplus >= 202002L // C++20
-	using Character = char8_t;
-	using StringView = std::u8string_view;
-#else
-	using Character = char;
-	using StringView = std::string_view;
-#endif
 	using ParseIterator = Character*;
-	class Token;
-	using ObjectsTable = std::vector<std::map<StringView, Token>>;
-	using ArraysTable = std::vector<std::vector<Token>>;
+	class ParseToken;
+	using ObjectsTable = std::vector<std::map<StringView, ParseToken>>;
+	using ArraysTable = std::vector<std::vector<ParseToken>>;
 
 	static constexpr bool IsWhitespace(Character byte) noexcept
 	{
@@ -49,6 +43,6 @@ namespace August
 
 	// The main interpretation method given an initial non-whitespace character.
 	// To avoid recursive includes, any parsing code can include this header and use this function but the definition is elsewhere
-	extern Token ParseAny(ObjectsTable& objects, ArraysTable& arrays, Character character, ParseIterator& iterator);
+	extern ParseToken ParseAny(ObjectsTable& objects, ArraysTable& arrays, Character character, ParseIterator& iterator);
 
 }
