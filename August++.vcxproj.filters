@@ -4,17 +4,23 @@
     <ClCompile Include="ConformanceTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\August++\Array.hpp" />
-    <ClInclude Include="include\August++\Number.hpp" />
-    <ClInclude Include="include\August++\Object.hpp" />
-    <ClInclude Include="include\August++\Document.hpp" />
-    <ClInclude Include="include\August++\String.hpp" />
-    <ClInclude Include="include\August++\Token.hpp" />
+    <ClInclude Include="include\August++\ParseArray.hpp" />
+    <ClInclude Include="include\August++\ParseNumber.hpp" />
+    <ClInclude Include="include\August++\ParseObject.hpp" />
+    <ClInclude Include="include\August++\ParseDocument.hpp" />
+    <ClInclude Include="include\August++\ParseString.hpp" />
+    <ClInclude Include="include\August++\ParseToken.hpp" />
     <ClInclude Include="include\August++\ParseException.hpp" />
-    <ClInclude Include="include\August++\Boolean.hpp" />
-    <ClInclude Include="include\August++\Null.hpp" />
+    <ClInclude Include="include\August++\ParseBoolean.hpp" />
+    <ClInclude Include="include\August++\ParseNull.hpp" />
     <ClInclude Include="include\August++\PowerOf10.hpp" />
     <ClInclude Include="include\August++\Parse.hpp" />
+    <ClInclude Include="include\August++\StringifyArray.hpp" />
+    <ClInclude Include="include\August++\StringifyDocument.hpp" />
+    <ClInclude Include="include\August++\StringifyObject.hpp" />
+    <ClInclude Include="include\August++\StringType.hpp" />
+    <ClInclude Include="include\August++\Stringify.hpp" />
+    <ClInclude Include="include\August++\StringifyNumber.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="JSON_Checker files">
