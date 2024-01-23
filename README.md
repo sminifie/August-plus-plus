@@ -1,10 +1,10 @@
 # August++
 
-A modern C++ library focusing on fast and efficient way to parse or stringify JSON. Why "August"? It's the missing month abbreviation in JSON.
+A modern C++ library providing a fast and efficient way to parse or stringify JSON. Why "August"? It's the missing month abbreviation in JSON.
 
-This is a highly optimised library that isn't intended to be a demonstration of a neat language implementation with a highly maintainable class structure. 
 It's full of (legal) cheeky tricks to avoid or minimise any copies, moves or allocations. 
 This turns a dangerous corner to low level (more like C) tactics using type aliasing. 
+This is a highly optimised library that isn't intended to be a demonstration of a neat language implementation with a highly maintainable class structure. 
 Good modern every-day C++ should enjoy a higher level abstraction and still be blisteringly fast; not sacrificing type and runtime safety by cutting corners like I do here to optimise the poop out of it.
 
 Why would anyone want to do this? There are dozens of C++ JSON libraries out there but I couldn't find one that ticked all the right boxes. 
@@ -54,7 +54,7 @@ auto myInteger = root[u8"Number"sv].As<int>();
 ~~~
 
 ## Stringify
-The course I took for stringification is to use sequential construction of JSON hierarchy, leveraging anonymous functions to forcefully mark the start and ending scope of an object or array. This type of serialisation means that you cannot go back and add to objects or arrays already created after the lambda scope exits. I saw this as a fair compromise to maximise speed; you just need to prepare all information for a JSON object scope before creating it so that it can be written in full the first time.
+The course I took for stringification is to use sequential construction of the JSON hierarchy, leveraging anonymous functions to forcefully mark the start and ending scope of an object or array. This type of serialisation means that you cannot go back and add to objects or arrays already created after the lambda scope exits. I saw this as a fair compromise to maximise speed; you just need to prepare all information for a JSON object scope before creating it so that it can be written in full the first time.
 
 A document instance owns the buffer of JSON being built, so please note that the document's Stringify() method returns a string view and therefore is only valid as long as the document instance.
 
